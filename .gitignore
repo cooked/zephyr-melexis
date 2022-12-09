@@ -1,0 +1,9 @@
+
+build
+bootloader
+tools
+modules
+.west/
+./zephyr
+.vscode/.cortex-debug.registers.state.json
+.vscode/*.log

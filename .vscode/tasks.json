@@ -1,0 +1,43 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build MLX sample",
+			"detail": "Builds MLX sample",
+			"type": "shell",
+			"group": "build",
+			"command": "west",
+			"args": [
+				"build",
+				"-p", "always",
+				"-b", "nucleo_f103rb",
+				"-d", "${workspaceFolder}/samples/mlx9039x-spi/build",
+				"${workspaceFolder}/samples/tmc-spi"
+			]
+		},
+		{
+			"label": "Flash MLX sample",
+			"detail": "Flash MLX sample",
+			"type": "shell",
+			"group": "build",
+			"command": "west",
+			"args": [
+				"flash",
+				"-d", "${workspaceFolder}/samples/mlx9039x-spi/build"
+			],
+		},
+		{
+			"label": "Debug MLX sample",
+			"detail": "debug MLX sample",
+			"type": "shell",
+			"group": "build",
+			"command": "west",
+			"args": [
+				"debug",
+				"-d", "${workspaceFolder}/samples/mlx9039x-spi/build"
+			],
+		}
+	]
+}
