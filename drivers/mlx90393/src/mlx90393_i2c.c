@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Anything Connected
+ * Copyright (c) 2022 Stefano Cottafavi
  *
  * SPDX-License-Identifier: Apache-2.0
  */
