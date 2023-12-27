@@ -17,24 +17,24 @@
 static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED0_NODE, gpios);
 const struct device *const mlx = DEVICE_DT_GET_ONE(melexis_mlx90393);
 
-void main(void)
+int main(void)
 {
 	int err;
 
 	if (!device_is_ready(led.port)) {
 		printk("LED is not ready\n");
-		return;
+		return 0;
 	}
 
 	if (!device_is_ready(mlx)) {
 		printk("MAG is not ready\n");
-		return;
+		return 0;
 	}
 
 
 	err = gpio_pin_configure_dt(&led, GPIO_OUTPUT_ACTIVE);
 	if (err < 0) {
-		return;
+		return 0;
 	}
 
 	printk("Raspberry Pi Pico test\n");
@@ -68,7 +68,7 @@ void main(void)
 
 		err = gpio_pin_toggle_dt(&led);
 		if (err < 0) {
-			return;
+			return 0;
 		}
 
 

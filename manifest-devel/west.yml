@@ -1,3 +1,8 @@
+
+# https://docs.zephyrproject.org/3.1.0/develop/west/manifest.html
+
+# https://github.com/zephyrproject-rtos/zephyr/issues/35075
+
 manifest:
 
   remotes:
@@ -8,6 +13,7 @@ manifest:
     - name: zephyr
       remote: zephyr
       revision: main
+      path: rtos
       import:
         name-allowlist:
           - cmsis
