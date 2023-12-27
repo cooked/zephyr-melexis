@@ -1,0 +1,5 @@
+menu "Melexis sensor drivers"
+
+rsource "sensor/Kconfig"
+
+endmenu

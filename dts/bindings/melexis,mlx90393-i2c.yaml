@@ -1,0 +1,6 @@
+description: |
+  DeviceTree binding for the Melexis MLX90393 3-axis magnetometer IMU with
+  temperature sensor.
+compatible: "melexis,mlx90393"
+on-bus: i2c
+include: ["i2c-device.yaml", "melexis,mlx-common.yaml"]

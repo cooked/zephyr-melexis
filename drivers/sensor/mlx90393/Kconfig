@@ -1,0 +1,41 @@
+
+menuconfig MLX90393
+	bool "MLX90393 I2C/SPI 3-axis magnetometer and temperature chip"
+	default y
+	depends on DT_HAS_MELEXIS_MLX90393_ENABLED
+	select I2C if $(dt_compat_on_bus,$(DT_COMPAT_MELEXIS_MLX90393),i2c)
+	select MLX90393_I2C if $(dt_compat_on_bus,$(DT_COMPAT_MELEXIS_MLX90393),i2c)
+	select SPI if $(dt_compat_on_bus,$(DT_COMPAT_MELEXIS_MLX90393),spi)
+	select MLX90393_SPI if $(dt_compat_on_bus,$(DT_COMPAT_MELEXIS_MLX90393),spi)
+	help
+		Enable driver for MLX90393 3-axis magnetometer
+
+if MLX90393
+
+config MLX90393_SPI
+	bool "Use SPI bus"
+	default n
+	depends on (MLX90393 && SPI)
+	help
+		Enables SPI communication
+
+config MLX90393_I2C
+	bool "Use I2C bus"
+	default n
+	depends on (MLX90393 && I2C)
+	help
+		Enables I2C communication
+
+config MLX90393_INTERRUPT
+	bool "Enable or disable interrupt-based mode"
+	default n
+	depends on MLX90393
+	help
+		Enables the use of the INT-pin on the MLX90393, also in code
+
+	# Add log level for mlx90393 code
+	module = MLX90393
+	module-str = mlx90393
+	source "subsys/logging/Kconfig.template.log_config"
+
+endif

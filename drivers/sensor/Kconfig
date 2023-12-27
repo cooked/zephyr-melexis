@@ -1,0 +1,2 @@
+rsource "mlx90393/Kconfig"
+rsource "mlx90395/Kconfig"

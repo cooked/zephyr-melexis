@@ -1,0 +1,18 @@
+
+properties:
+  interrupt-gpios:
+    type: phandle-array
+    required: false
+    description: |
+      The INT signal default configuration is active-high. The property value
+      should ensure that the flags properly describe the signal that is
+      presented to the driver.
+  trigger-gpios:
+    type: phandle-array
+    required: false
+    description: |
+      The TRIG signal default configuration is active-high. The property value
+      should ensure that the flags properly describe the signal that is
+      presented to the driver.
+
+# TODO: Add (more) actual properties for the magnetomer here...

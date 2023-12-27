@@ -1,0 +1,7 @@
+description: |
+  DeviceTree binding for the Melexis MLX90395 3-axis magnetometer IMU with
+  temperature sensor.
+
+compatible: "melexis,mlx90395"
+
+include: ["spi-device.yaml", "melexis,mlx-common.yaml"]

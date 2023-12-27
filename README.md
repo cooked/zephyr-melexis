@@ -5,6 +5,6 @@ Zephyr OS support for Melexis sensors
 
 ```
 cd <repo root>
-west init -l manifest
+west init -mf west.yml
 west update
 ```

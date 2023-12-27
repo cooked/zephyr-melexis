@@ -1,0 +1,25 @@
+/*
+ * Copyright (c) 2022, Stefano Cottafavi <stefano.cottafavi@gmail.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+ #include <zephyr/dt-bindings/adc/adc.h>
+
+ / {
+	pico-temp {
+		compatible = "raspberrypi,pico-temp";
+		status = "okay";
+		io-channels = <&adc 4>;
+	};
+};
+
+&spi0 {
+	mlx90393@0 {
+		reg = <0x0>;
+		compatible = "melexis,mlx90393";
+		spi-max-frequency = <200000>;
+		status = "okay";
+		//interrupt-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH)>;
+	};
+};
